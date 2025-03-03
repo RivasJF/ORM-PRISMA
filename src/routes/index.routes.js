@@ -1,15 +1,16 @@
 import { Router } from "express";
-import { deleteUser, getUser, patchUser, postUser } from "../controller/user.copntroller.js";
+import { deleteUser, getUser, getUsers, patchUser, postUser } from "../controller/user.copntroller.js";
 
 const routs = Router() 
 
-routs.get('/',getUser)
+routs.get('/',getUsers)
+
+routs.get('/:id',getUser)//
 
 routs.post('/',postUser)
 
 routs.patch('/:id',patchUser)
 
-routs.delete('/',deleteUser)
-
+routs.delete('/:id',deleteUser)//
 
 export default routs
